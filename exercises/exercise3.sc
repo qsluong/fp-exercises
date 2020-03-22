@@ -151,3 +151,47 @@ def checkIfListContainsDuplicates(l: List[String]) = {
 }
 
 checkIfListContainsDuplicates(people)
+
+// Recursion
+
+val testList = List(1,2,3,4,5,6,7,8)
+
+// i.
+def size(l: List[Int]): Int = {
+  if (l == Nil) 0
+  else 1 + size(l.tail)
+}
+
+size(testList)
+
+// ii.
+def sum(l: List[Int]): Int = {
+  if (l == Nil) 0
+  else {
+    val head::tail = l
+    val newHead = head
+    newHead + sum(tail)
+  }
+}
+
+sum(testList)
+
+// iii.
+def max(l: List[Int]): Int = {
+  if (l == Nil) 0
+  else {
+    val head::tail = l
+    val currentMax = head
+    currentMax max max(tail)
+  }
+}
+
+max(testList)
+
+// iv.
+def replicate(s: String, i: Int): String = {
+  if (i == 0) ""
+  else s + replicate(s, i - 1)
+}
+
+replicate("test", 8)
