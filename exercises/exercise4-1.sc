@@ -1,22 +1,3 @@
-// 2
-
-// ii.
-//def largestIntValue(i: Int, o: Option[Int]): Int =
-//  o match {
-//    case None => i
-//    case Some(value) if (value > i) => value
-//  }
-//
-//def largestElementInList(l:List[Int]): Option[Int] =
-//  l match {
-//    case Nil => None
-//    case head :: tail => Some(largestIntValue(head, largestElementInList(tail)))
-//  }
-//
-//largestElementInList(List(3, 2, 1))
-
-// 3
-
 // i
 def squareRootOfX(e: Either[Double, String]): Either[Double, String] =
   e match {
@@ -51,4 +32,3 @@ divideOneByXMinusOne(Left(2))
 val chainedFunctions = squareRootOfX _ andThen divideTenByX andThen divideOneByXMinusOne
 
 chainedFunctions(Left(1))
-
